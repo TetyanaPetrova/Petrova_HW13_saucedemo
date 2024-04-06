@@ -16,13 +16,15 @@ public class ProductCheckTest extends TestLoginWithPO {
     public void productCheckTest()  {
        // WebDriverWait webDriverWait=new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.get("https://www.saucedemo.com/v1/inventory.html");
+
         ListOfProductPage objProd1 = new ListOfProductPage(driver);
-        objProd1.Product();
-        //webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@id='item_4_title_link']/../../div/div[@class='inventory_item_price']")));
-        ProductPage objProd = new ProductPage(driver);
+//        objProd1.getFirstProduct();
+//        objProd1.Product();
+//        //webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@id='item_4_title_link']/../../div/div[@class='inventory_item_price']")));
+//        ProductPage objProd = new ProductPage(driver);
 
-        Assert.assertEquals(objProd.getPrice1(), objProd1.getPrice1List());
+        Assert.assertEquals(objProd1.getFirstProductName(), "Sauce Labs Backpack");
 
-        Assert.assertEquals(objProd.getProduct1(), objProd1.getProduct1List());
+        Assert.assertEquals(objProd1.getFirstProductPrice(), "29.99");
     }
 }
